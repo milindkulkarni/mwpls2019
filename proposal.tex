@@ -1,0 +1,488 @@
+\newif\ifdraft\draftfalse
+
+\newcommand{\poplyear}{2017}
+\newcommand{\poplloc}{Paris, France}
+\newcommand{\plmwnum}{Sixth}
+\newcommand{\numNSFstudents}{8} %Normally 15, but 10 this year because we are carrying over leftovers
+\newcommand{\popldates}{January~18 to January~20}
+\newcommand{\plmwdate}{January~17}
+\newcommand{\plmwurl}{\url{http://conf.researchr.org/home/PLMW-2017}}
+\newcommand{\hotelperstudent}{\$750}
+\newcommand{\registration}{\$400}
+\newcommand{\foodperstudent}{\$100}
+\newcommand{\airfareperstudent}{\$1,250}
+\newcommand{\costperstudent}{\$2,500}
+\newcommand{\industrysupport}{between \$20K and \$30K}
+\newcommand{\industrysponsors}{Facebook, Google, IBM Research, Jane Street Capital, and SIGPLAN}
+\newcommand{\plmworganizers}{Loris D'Antoni, Eva Darulova, Alexandra Silva, and Dimitris Vytiniotis}
+\newcommand{\plmwspeakers}{%not including the panels of young researchers
+Amal Ahmed, Rajeev Alur, Andrew Appel, Tom Ball, Sandrine Blazy, Adam Chlipala, Charles Consel,
+Byron Cook, Isil Dillig, Derek Dreyer,
+Jean-Christophe Filliatre, Nate Foster, Philippa Gardner, Sumit Gulwani, Robert Harper,
+John Hughes, Simon Peyton Jones, Shriram Krishnamurthi, Xavier Leroy,
+Paul McKenney, Matt Might, Greg Morrisett, Peter M\"uller,
+Peter O'Hearn, Benjamin Pierce, Frank Pfenning, Damien Pous, John Reppy, Davide Sangiorgi, Peter Sewell,
+Viktor Vafeiadis, Jan Vitek, Philip Wadler, Stephanie Weirich, and Steve Zdancewic}
+\newcommand{\citeplmws}{\cite{plmw12,plmw13,plmw14,plmw15,plmw16}}
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in,includefoot]{geometry}
+
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{mathpartir}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{bnf}
+
+\newcommand{\parahead}[1]{\paragraph{#1}}
+\def\mwpls{Midwest Programming Languages Summit}
+
+\begin{document}
+
+\section*{Summary} 
+
+{\Large 2019 Midwest Programming Languages Summit (MWPLS)}
+
+\parahead{Overview}
+
+The Midwest features many research-intensive institutions that have large and growing presences in the fields of programming languages
+
+We plan to organize a research workshop, called the Midwest PL Summit,
+to bring together researchers and students from the greater Midwest
+region. In contrast to more formal conference and workshop venues
+organized by ACM and IEEE, this informal research workshop will serve
+as a valuable forum for researchers and students to share in-progress
+research ideas and receive timely feedback to influence subsequent
+work.
+This will be particularly valuable
+because of the high concentration of programming languages researchers
+in the Midwest, and because it will provide graduate student
+researchers opportunities to network and further develop their
+research and presentation skills.
+
+\vspace{8pt}
+
+\parahead{Intellectual Merit}
+
+The main focus of our one-day event will be to present and share
+research ideas. Our event will include approximately fifteen
+presentations on specific research projects, as well as a poster
+session that will accommodate many more. These talks and posters will
+span a variety of timely and relevant topics in programming languages
+research, and will focus on in-progress and early-stage results, providing an opportunity to receive feedback at a level not available at traditional venues. We expect this forum to lead to the further development of results that will subsequently appear at high-quality workshops, conferences, and journals.
+
+\vspace{8pt}
+
+\parahead{Broader Impacts}
+
+%% Programming languages research, both the foundations and applications
+%% in software engineering, is an important source of ideas and
+%% techniques for the software technology that pervades our society.
+This proposal will foster the programming languages research community in
+the Midwest region, by providing networking opportunities for
+researchers to develop collaborations across organizations and for
+students to develop connections with senior researchers and other
+graduate students that will help with their future careers.
+By strengthening
+the intellectual ties among researchers in the Midwest region, the
+graduate students will develop a community that will support them in
+their subsequent careers in research, industry, or other sectors. The
+workshop will also bring together students and researchers from a
+variety of organizations (research-focused universities, industrial
+research labs, and teaching-focused colleges), which will help new
+research ideas flow into classroom settings and vice versa.
+
+\parahead{Key Words} student travel support, mentoring,
+diversity
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Introduction}
+
+The Midwest features many research-intensive institutions that have large and growing presences in the fields of programming languages, formal methods, and software engineering. Researchers at these schools are targeting areas such as
+type systems and program logics for
+software verification; high-performance compiler implementations for
+parallel and multi-core hardware; tools and techniques for software
+engineering, Web application security; and the application of
+programming language technology to diverse settings such as quantum
+computing and human-computer interaction.
+
+These researchers, which include faculty students, postdocs, and research scientists, often interact with each other at workshops and conferences (such as those organized by the ACM and IEEE) and through formal research collaborations. However, there is substantial benefit to providing a forum for a substantial portion of these researchers to interact with one another in a more informal research gathering. Such a forum allows for the exchange of ideas on in-progress research, provides networking opportunities which can lead to future graduate school positions or jobs, and fosters a sense of community that can spur further collaboration between the critical mass of researchers and across the large number of schools in the Midwest.
+
+\parahead{\mwpls{}: Past editions}
+
+The Midwest PL Summit's first edition was in 2015 at Purdue University\footnote{~\url{http://purdue-pl.github.io/PLSummit/}}. Subsequent editions were held at the University of Chicago (2016), Indiana University (2017), and the University of Wisconsin (2018). In 2019, we are planning to bring the event back to Purdue University. For each of these editions, participation ranged between 80 and 100 attendees, with representation from 8-12 universities. These editions each featured roughly a dozen research presentations as well as a poster session to encourage even more participation of researchers (especially students). Participant details are provided in Table~\ref{tab:participants}.
+
+\begin{table}[hb]
+\centering
+\begin{tabular}{lccc}
+{\bf Location} & {\bf Year} & {\bf \# of Participants} & {\bf \# of Students} \\
+\hline
+Purdue University & 2015 & 86 & 70\\
+University of Chicago & 2016 & $\sim$100 & $\sim$80\\
+Indiana University & 2017 & 97 & 72\\
+University of Wisconsin & 2018 & 107 & 80
+\end{tabular}
+\caption{Details of past participation in Midwest PL Summit.}
+\label{tab:participants}
+\end{table}
+
+
+%In the last four years, PL researchers at Purdue University, University of Chicago, and University of Indiana organized the first three
+%editions of the Midwest PL Summit to serve as an informal programming
+%languages research gathering for the greater Midwest
+%region.\footnote{~\url{http://purdue-pl.github.io/PLSummit/}} The
+%event was a success. In the first edition, approximately 90 people attended (including
+%$\approx{}$80 students and $\approx{}$10 faculty) from more than 4
+%different universities; 9 research presentations were delivered; and
+%$\approx{}$10 faculty research overview presentations were delivered.
+%Similar numbers followed in later editions.
+%This gathering complemented the successful series of Midwest
+%Verification Days over the past several
+%years.\footnote{~\url{http://publish.illinois.edu/midverday15/}}.
+%Although there is some overlap between the Verification and PL
+%communities, the scope of topics in the PL Summit attracted and served
+%a distinct population of researchers.
+
+\section{Proposed Activities: Midwest PL Summit 2019}
+
+Based on the success of last years' events, we plan to organize the
+fifth edition of the Midwest PL Summit later this year in West Lafayette, hosted by Purdue University.
+
+\parahead{Dates and Participants}
+
+The workshop will take place on Monday, September 23.
+We expect to have participants
+from more than 15 research universities, liberal arts colleges, and
+industrial research labs, including:
+Grinnell College,
+DePaul,
+DePauw University,
+Google,
+Indiana University,
+Loyola University Chicago,
+Mozilla Research,
+Northwestern University,
+Purdue University,
+Ohio State University,
+University of Chicago,
+University of Illinois at Urbana-Champaign,
+University of Illinois at Chicago,
+University of Iowa,
+University of Kansas,
+University of Wisconsin at Madison, and
+University of Michigan at Ann Arbor.
+We are expecting the number
+of participants to be 100 or more.
+
+\parahead{Venue}
+
+We have secured a venue for presentations, coffee breaks, meals, and the poster session, at the Shively Club at Purdue University. This is a venue used by many large workshops hosted at Purdue each year. The venue is located on campus at Purdue University. Purdue is centrally located in the Midwest, and is within easy driving distance of a large number of the universities and colleges we expect to participate. The campus is also located about an hour drive from Indianapolis International Airport. We have secured blocks of rooms at several nearby hotels to accommodate travelers who wish to stay overnight. Our
+workshop website will provide information about transportation
+options, as well as hotel accommodation for attendees that choose to
+stay overnight before or after the event.
+
+\parahead{Meeting Format}
+
+We are planning a one-day event with the goal of maximizing
+opportunities for researchers (students, in particular) to
+present and share research ideas. Our tentative schedule is the
+following:
+
+\begin{itemize}
+\item 08:30--09:30: Breakfast
+\item 09:30--12:00: Research Presentations
+\item 12:00--01:30: Lunch
+\item 01:30--03:00: Research Presentations
+\item 03:00--04:00: Poster Session and Coffee Break
+\item 04:00--05:30: Research Presentations
+\item 05:30--: Reception and Dinner (optional)
+\end{itemize}
+
+%% \begin{enumerate}
+%% \item[(a)] a series of approximately ten to fifteen research presentations, and
+%% \item[(b)] a poster session.
+%% \end{enumerate}
+
+\noindent
+The schedule will allow for approximately fifteen research
+presentations, as well as a poster session.
+To select the program of talks and posters, we will distribute an open
+call for talk and poster submissions through our workshop web site. We
+will aim to choose talks that cover a variety of topics that are
+likely to find broad interest among the audience, and we will favor
+to provide speaking opportunities for students, particularly those who have
+not presented in past events. We expect to accommodate all of the poster
+submissions.
+
+In addition to the research program, our schedule includes
+opportunities for informal and unstructured conversations and
+networking: breakfast (before the morning session), lunch (in between
+the morning and afternoon sessions), and a coffee break to coincide
+with the poster session. After the day's activities, we will organize
+an optional social dinner event in the area.
+
+\section{Benefit for Students}
+
+Over the past four years, students have derived several benefits from MWPLS. In particular, the forum gives students a low-stakes, but high quality, setting to present in-progress or early-stage research. The large number of prominent researchers from across the Midwest means that the students will receive substantial, meaningful feedback. Further, the event allows students to build their research networks, both of other students, as well as of faculty and senior researchers.
+
+MWPLS also hosts undergraduate students from across the region, exposing them to the research conducted at the area's schools, and allowing them to make connections in pursuit of future graduate school opportunities.
+
+\section{Outcome of past support from NSF}
+
+The NSF has supported two prior editions of MWPLS: the second summit, held in 2016 at University of Chicago, and the fourth summit, held in 2018 at the University of Wisconsin. In both cases, the support was used to defray student travel costs. Both summits supported $\sim$15 students with their funds.
+
+\section{Student Travel Support Details}
+
+\subsection{Need for student travel support}
+
+Although many students will be able to travel to and from the event
+within a single day, many 
+students will not. For example, the commute from universities 
+Iowa is four or five hours. Students traveling from far away will
+likely to need to stay overnight in West Lafayette the day before and/or the
+day after the event.
+
+\subsection{Spending plan}
+
+We expect to distribute $\sim$20 such awards to cover the costs of accommodation and defray the costs of travel. We expect this primarily to cover the cost of accommodation (which will be further defrayed by encouraging sharing rooms with other students attending the summit).
+
+\subsection{Recruitment process}
+
+We have begun advertising the event by directly contacting programming
+languages researchers from a variety of organizations in the Midwest
+(described earlier) to collect general preferences about the workshop. We will create a public web page for the event and distribute the information widely
+(e.g., by contacting researchers and students directly, and by posting
+announcements on public mailing lists and on Twitter).
+
+\subsection{Outreach to underrepresented groups}
+
+In addition to our general publicity for the event, we will reach out specifically to institutions that serve underrepresented groups (e.g., MSIs). In his role as co-organizer of the Programming Languages Mentoring Workshop, co-PI Kulkarni has curated a list of contacts at these institutions, and will reach out to those in the greater Midwest region.
+
+\subsection{Application process}
+
+Any student enrolled full-time at an accredited
+university or college is welcome to apply for a grant.
+To apply for an awards, we will ask students
+to submit information about how far they will have to travel to attend
+the event, what modes of transportation they have access to, and
+whether or not their travel expenses would be covered by their home
+institutions or not. Applications will be collected at registration time. 
+
+\subsection{Selection criteria}
+
+Preference will be given to: 
+
+\begin{itemize}
+\item Students presenting at the workshop
+\item Students from under-represented groups
+\item Students whose research interests align closely with PL topics
+\item Students who would not otherwise be able to attend due to
+financial limitations
+\end{itemize}
+
+After determining students' needs based on these
+factors, we will distribute the travel award funds to
+these students. We will also endeavor to distributed the funds broadly across students traveling from different institutions
+
+\section{Anti-Harassment Policies}
+
+Purdue has a formal, publicly available, anti-harassment policy: \url{https://www.purdue.edu/policies/ethics/iiic1.html}. This policy details both the university (and members') commitments to combating harassment, as well as reporting information.
+
+%\section{Publicity and Web Page}
+%
+%We have begun advertising the event by directly contacting programming
+%languages researchers from a variety of organizations in the Midwest
+%(described earlier) to collect general preferences about the workshop. We will create a public web page for the event and distribute the information widely
+%(e.g., by contacting researchers and students directly, and by posting
+%announcements on public mailing lists and on Twitter).
+%
+%\parahead{Call for Participation}
+%
+%Our web page will provide a public and open call for
+%research talk and poster submissions, due approximately one
+%month before the event. At that point, the organizers will review all
+%of the submissions and select a program of talks as described earlier.
+%
+%\parahead{Local Arrangements}
+%
+%Our web page will also provide information about various
+%transportation options (car, train, and bus) to and from Madison,
+%as well as information about local travel and accommodation near the
+%workshop venue on the University of Wisconsin campus.
+%
+%\parahead{Archiving Presentations}
+%
+%After the event, we will give talk and poster presenters the
+%opportunity to upload their presentations to be linked from the event
+%web page for persistent, public access.
+%
+%\section{Selection of Student Travel Awards}
+%
+%Although many students will be able to travel to and from the event
+%within a single day, many 
+%students will not. For example, the commute from universities 
+%Iowa is four or five hours. Students traveling from far away will
+%likely to need to stay overnight in West Lafayette the day before and/or the
+%day after the event.
+%
+%\parahead{Student Travel Awards}
+%
+%To help subsidize the costs to attend, our budget includes funding for
+%student travel awards. Any student enrolled full-time at an accredited
+%university or college is welcome to apply for a grant.
+%To apply for an awards, we will ask students
+%to submit information about how far they will have to travel to attend
+%the event, what modes of transportation they have access to, and
+%whether or not their travel expenses would be covered by their home
+%institutions or not. Preference will be given to: 
+%
+%\begin{itemize}
+%\item Students presenting at the workshop
+%\item Students whose research interests align closely with PL topics
+%\item Students from under-represented groups
+%\item Students who would not otherwise be able to attend due to
+%financial limitations
+%\end{itemize}
+%
+%After determining students' needs based on these
+%factors, we will distribute the travel award funds to
+%these students. We expect to distribute $\sim$20 such awards to cover the costs of accommodation and defray the costs of travel.
+%%For example, if there are 15 students who apply for travel
+%%support, we would provide an average stipend of \$100 to each student to help
+%%cover travel expenses.
+%%The stipend will be paid directly to the students to reimburse their expenses.
+%%We will not ask students to provide receipts and detailed breakdowns of
+%%the incurred expenses.
+%
+%\parahead{Transportation and Hotel Sharing}
+%
+%To further help defray the costs, we will use our event web page to
+%promote and facilitate opportunities for students to share travel
+%expenses if desired---for example, by carpooling from different
+%universities in the same city, or by sharing a hotel room.
+
+\section{Reporting}
+
+After the event, we will submit a summary to NSF with statistics about
+the number of attendees (students and senior researchers), the number
+of institutions represented, and the research topics and talks
+presented. We will also report the number of students who applied for
+travel funding, as well as a summary of how the funds were
+distributed to students who demonstrated financial need, as described
+earlier.
+
+The report will include
+the final schedule of the workshop as well as specific details about
+the awards given (including name, institution, under-represented group,
+citizenship/residency, program of study, interests and stage.)
+
+Shortly after the workshop, we will administer
+surveys to collect feedback from all of the workshop participants,
+including those funded by NSF and those funded from other sources.
+This information will be used to improve future renditions of the workshop.
+
+Later in the year, we will administer a survey to determine what influence the workshop has had on attendees.
+Some particular topics of interest are:
+\begin{itemize}
+\item how did the workshop help fostering collaborations
+\item how did PLMW affect research abilities, both technical and communicative
+\end{itemize}
+
+
+\section{Broader Impacts of the Proposed Activities}
+
+Programming languages research, both the foundations and applications
+in software engineering, is an important source of ideas and
+techniques for the software technology that pervades our society.
+The proposed activities will help facilitate the career development of
+young computer science researchers pursuing programming languages
+research. The workshop will provide opportunities for these students
+to develop their presentation skills, which is crucial for translating
+ideas from academic communities into practical technologies that can
+be used by society at large. Research gatherings are also crucial for
+the dissemination and cross-pollination of ideas. By promoting such an
+event specifically for young researchers, the collaborations formed at
+this event will strengthen their research efforts and community in the
+rest of their graduate school careers, as well as in their subsequent
+careers in research, industry, and other sectors.
+
+
+
+
+
+
+
+\newpage
+
+\setcounter{page}{1}
+\bibliographystyle{plain}
+
+\section*{Budget Justification}
+
+Our proposed budget includes two items:
+
+\begin{itemize}
+
+\item \$5,000 will be used to provide travel awards to 10 to 15 students who
+might not otherwise be able to attend the event due to the financial
+costs (such as transportation and accommodation).
+
+\end{itemize}
+
+\noindent
+With the support of funds from the university and industry partners, we expect not to charge a
+registration fee for any of the attendees. We have secured
+a workshop venue at the university with the support of the departments of Electrical and Computer Engineering and Computer Science. This venue will host the presentations, poster session, and the summit dinner. Attendees
+will be expected to cover their travel costs (transportation to and
+from West Lafayette and any hotel fees). The proposed budget will be used to defray travel costs for students who might otherwise not be able to attend.
+
+
+\newpage
+
+\setcounter{page}{1}
+
+\section*{Data Management Plan}
+
+The data produced as a part of this project will include registration
+information and data about attendees, presentation materials, results
+of participants surveys, and our final report.
+
+\paragraph*{Data and Metadata Standards}
+%
+All project data will be stored in standard formats such as
+spreadsheets, presentations, PDF, TeX, ASCII, and CSVs. We plan to
+bundle this data into a single archive and make it available to future
+organizers with documentation in the form of a README file.
+
+\paragraph*{Access and sharing}
+%
+Aggregate results from participant surveys will be included in a final
+report. We plan to make a version of this report (without detailed
+information about participants which will be included in our final
+report to the NSF) available on the website. The survey results themselves will be
+kept confidential. With permission, we plan also to make the
+presentations from the workshop available on the web.
+
+\paragraph*{Re-use and re-distribution}
+%
+We expect that ownership of presentation materials will reside with
+the speakers themselves.
+
+\paragraph*{Archiving and Preservation}
+%
+During the course of the project, we will store data on the workshop
+website. After the workshop, we will assemble an archive file make it
+available to future organizers.
+
+\newpage
+
+\setcounter{page}{1}
+\bibliography{proposal}
+
+\end{document}
